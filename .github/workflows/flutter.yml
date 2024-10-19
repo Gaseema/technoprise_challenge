@@ -20,7 +20,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.24.3" # Updated to your local Flutter version
+          flutter-version: "3.24.3"
 
       - name: Run Flutter Lint
         run: flutter analyze
@@ -37,7 +37,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.24.3" # Updated to your local Flutter version
+          flutter-version: "3.24.3"
 
       - name: Run Flutter Tests
         run: flutter test
@@ -54,7 +54,10 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.24.3" # Updated to your local Flutter version
+          flutter-version: "3.24.3"
 
       - name: Build APK
         run: flutter build apk --release
+
+      - name: Build iOS
+        run: flutter build ios --no-codesign
