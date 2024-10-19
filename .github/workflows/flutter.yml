@@ -58,6 +58,3 @@ jobs:
 
       - name: Build APK
         run: flutter build apk --release
-
-      - name: Build iOS
-        run: flutter build ios --no-codesign
