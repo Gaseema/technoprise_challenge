@@ -33,7 +33,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.0.0'
+          flutter-version: '3.2.3'  # Keep the same Flutter version
 
       - name: Run Flutter Tests
         run: flutter test
@@ -48,10 +48,22 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.0.0'
+          flutter-version: '3.2.3'  # Keep the same Flutter version
 
       - name: Build APK
         run: flutter build apk --release
+
+  build_ios:
+    runs-on: macos-latest
+    needs: test
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.2.3'  # Keep the same Flutter version
 
       - name: Build iOS
         run: flutter build ios --release
